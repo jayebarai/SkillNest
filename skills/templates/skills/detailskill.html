@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="skill-detail-container">
+
+        <div class="skill-detail-info">
+            <span class="badge">{{ skill.skill_level }}</span>
+
+            <h1>{{ skill.name }}</h1>
+
+            <p class="owner-info">Offered by: <strong>{{ skill.user.username }}</strong></p>
+
+            <div class="meta-info">
+                <p><strong>Category:</strong> {{ skill.category }}</p>
+            </div>
+
+            <div class="description-box">
+                <h3>About this Skill</h3>
+                <p>{{ skill.description }}</p>
+            </div>
+
+            <div class="action-section">
+                <a href="{% url 'send_request' skill.id %}" class="btn btn-exchange">
+                    Request Exchange
+                </a>
+            </div>
+        </div>
+
+    </div>
+</div>
+{% endblock %}
